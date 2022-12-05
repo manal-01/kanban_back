@@ -34,7 +34,7 @@ public class TaskController {
 		return this.taskService.createTask(task);
 	}
 	@PatchMapping("/tasks/{id}")
-	Task moveTask(@RequestBody TaskMoveAction taskMoveAction, @PathVariable Long id) {
+	 public Task moveTask(@RequestBody TaskMoveAction taskMoveAction, @PathVariable Long id) {
 		Task task = this.taskService.findTask(id);
 		if (Constants.MOVE_LEFT_ACTION.equals(taskMoveAction.getAction())) {
 			task = this.taskService.moveLeftTask(task);
